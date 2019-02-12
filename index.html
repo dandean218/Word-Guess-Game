@@ -1,98 +1,82 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="UTF-8">
-    <title>My First Object</title>
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script type="text/javascript" src="assets/javascript/game.js"></script>
+
   </head>
+
   <body>
+    <header>
+        <div class="container-fluid">
+            <div class="header-bar">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="left-hand-deadspace">
+                            <!--LEFT HAND DEADSPACE-->
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="header-center">
+                            <h1>HANGMAN</h1>
+                            <!--WHERE THE LOGO GOES-->
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <!--RIGHT HAND DEADSPACE-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="body-area">
+            <div class="row">
+                <div class="col-sm-2">
+                    <!--LEFT HAND DEADSPACE-->
+                </div>
+                <div class="col-sm-4">
+                    <div class="content-area">
+                        <!--STUFF GOES IN HERE...GAME, ETC...TBD-->
+
+                          <!-- Enter your guess: <input type="text" id="guess">
+                         <button type="button" id="checkAnswer" onclick="hangmanInput()">Check Now</button> -->
+                         <br /><br />
+                        <button type="button" id="startGame" onclick="hangmanStart()">Begin Now</button>
+                        <br /><br />
+
+                        <p class="wordChoiceDisplay"></p>
+                        
+                        <br /><br />
+                        <h2 class="userGuess"></h2>
+                        <br /><br />
+                        <p class="notFound"></p>
+                        <br /><br />
+                        <p class="guessesRemaining"></p>
+
+                    
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="imageContainer">
+                    <p class="showImage"></p>
+                </div>
+                </div>
+                <div class="col-sm-2">
+                    <!--RIGHT HAND DEADSPACE-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!--Graphic Placeholder-->
-    <h1>Hangman: Star Trek edition</h1>
-    <p id="welcome">Hit any key to continue</p>
-    Enter your guess: <input type="text" id="guess">
-    <button type="button" id="checkAnswer" onclick="hangmanInput()">Check Now</button>
-
-    <script language="javascript" type="text/javascript">
-    (function() {
-
-      //listener function aka "hook" aka "event lister"
-      document.onkeyup = hangmanInput();
-
-      var gameObject = {
-        trekWords: ["Picard", "Enterprise", "LaForge", "Worf", "Starfleet"],
-        currentHangmanWord: [],
-        winCounter: 0,
-        lossCounter: 0,
-        guessesLeft: 8,
-      };
-
-      var pictureWins = {
-        picard: //insert image,
-        enterprise: //insert image, 
-        laforge: //image
-        worf: //image
-        starfleet: //
-      };
-
-    var position = Math.floor(Math.random()*(trekWords.length-1)); //should return value between 0 and 4
-
-    var word = gameObject.trekWords[position];
-
-    var wordAnswer = [];
-
-    for(var x = 0; x < word.length; x++){
-        wordAnswer[x] = "_ ";
-    }
-    
-    var remainingGuesses = word.length; // remaining guesses = guesses left - incorrect guess
-
-    //game runs here
-    function hangmanInput(){
-
-      // console.log(`initial state -> Word: ${gameObject.word} remainingGuesses: ${gameObject.remainingGuesses} guessesLeft: ${gameObject.guessesLeft}`,)
-      // console.log(`Position: ${position}`);
-      // console.log(`${trekWords.length()-1}`);
-      // console.log(`${gameObject.trekWords}`);
-      while(remainingGuesses > 0){
-        // search(a) - return the position of the "a" - if not found, returns -1
-        //if -1, then reduce guessesLeft
-        //else, run a for loop to find position(s) of "a"
-        var guess = document.getElementById("guess").value;
-
-        for(var i = 0; i < word.length; i++){
-          if(word[i] === guess){
-              wordAnswer[i] = guess;
-              remainingGuesses--; 
-          }
-          // else{
-          //     if(word[i] !== guess){
-          //         guessesLeft = guessesLeft -1;
-          //     }
-          }
-          // Refresh display of wordAnswer _ _ A _ B
-      }
-      
-      if(guessesLeft = 0){
-          //prompt user that he has lost
-          //Play again?
-      }
-    }
-
-    //Get user input for keyboard choice (create a keyboard event)
 
 
-    //??How to display word as user is guessing it? partially
-
-    //have default guessing header
-
-
-    //have default guessing image
-
-
-
-    // look up: document.queryselector(".example") == grabbing an element from the page;
-    // look up: document.queryselector(".example") = innerHTML (property that allows html on page)
-  })();
-    </script>
+ 
   </body>
 
 
